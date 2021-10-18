@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:multiselect/multiselect.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +26,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   List<String> selected = [];
 
   @override
@@ -36,16 +34,16 @@ class _HomeState extends State<Home> {
         body: Center(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: DropDownMultiSelect(
-          onChanged: (List<String> x) {
-            setState(() {
-              selected =x;
-            });
-          },
-          options: ['a' , 'b' , 'c' , 'd'],
-          selectedValues: selected,
-          whenEmpty: 'Select Something',
-        ),
+        // child: DropDownMultiSelect(
+        //   onChanged: (List<String> x) {
+        //     setState(() {
+        //       selected =x;
+        //     });
+        //   },
+        //   options: ['a' , 'b' , 'c' , 'd'],
+        //   selectedValues: selected,
+        //   whenEmpty: 'Select Something',
+        // ),
       ),
     ));
   }

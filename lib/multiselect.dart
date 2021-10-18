@@ -73,12 +73,15 @@ class DropDownMultiSelect<T> extends StatefulWidget {
   /// defines whether the widget is read-only
   final bool readOnly;
 
+  final String keyToShow;
+
   const DropDownMultiSelect({
     Key? key,
     required this.options,
     required this.selectedValues,
     required this.onChanged,
     required this.whenEmpty,
+    required this.keyToShow,
     this.childBuilder,
     this.menuItembuilder,
     this.isDense = false,
@@ -150,7 +153,7 @@ class _DropDownMultiSelectState extends State<DropDownMultiSelect> {
                             ? widget.menuItembuilder!(x)
                             : _SelectRow(
                                 selected: widget.selectedValues.contains(x),
-                                text: x.toString(),
+                                text: x.toMap()[widget.keyToShow],
                                 onChange: (isSelected) {
                                   if (isSelected) {
                                     var ns = widget.selectedValues;
