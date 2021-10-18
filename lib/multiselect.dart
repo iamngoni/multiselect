@@ -153,7 +153,7 @@ class _DropDownMultiSelectState extends State<DropDownMultiSelect> {
                             ? widget.menuItembuilder!(x)
                             : _SelectRow(
                                 selected: widget.selectedValues.contains(x),
-                                text: x.toMap()[widget.keyToShow],
+                                text: x.toJson()[widget.keyToShow],
                                 onChange: (isSelected) {
                                   if (isSelected) {
                                     var ns = widget.selectedValues;
